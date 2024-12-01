@@ -1,12 +1,12 @@
 // 保存设置函数
 function saveSettings() {
     const accessControl = {
-        dataServer: {
+        DataServer: {
             high: document.getElementById("dataServerHigh").checked,
             medium: document.getElementById("dataServerMedium").checked,
             low: document.getElementById("dataServerLow").checked,
         },
-        officeZone: {
+        OfficeZone: {
             high: document.getElementById("officeZoneHigh").checked,
             medium: document.getElementById("officeZoneMedium").checked,
             low: document.getElementById("officeZoneLow").checked,
