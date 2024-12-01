@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 元数据 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Random User Generator</title>
+    <!-- 引入样式表 -->
+    <link href="style.css" rel="stylesheet">
+    <!-- 引入必要的库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.waves.min.js"></script>
+    <!-- 引入 Font Awesome 图标库 -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" rel="stylesheet">
+</head>
+<body>
+    <!-- 动态背景 -->
+    <div id="vanta-bg"></div>
+    <!-- 页面主要内容 -->
+    <div class="card">
+        <h2><i class="fas fa-user-circle"></i> Generate Random User</h2>
+
+        <!-- 直接包含文件输入 -->
+        <label for="csvFile">Upload CSV File:</label>
+        <input type="file" id="csvFile" accept=".csv">
+
+        <div id="fileInfo"></div>
+
+        <button id="generateButton" class="btn btn-generate"><i class="fas fa-random"></i> Generate Random User</button>
+
+        <div id="userInfo"></div>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="generator.js"></script>
+    <script>
+        // 初始化 Vanta 背景动画
+        VANTA.WAVES({
+            el: "#vanta-bg",
+            color: 0x2575fc,
+            shininess: 50,
+            waveHeight: 20,
+            waveSpeed: 1,
+            zoom: 0.8
+        });
+    </script>
+</body>
+</html>

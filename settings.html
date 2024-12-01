@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 元数据 -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Access Control Settings</title>
+    <!-- 引入样式表 -->
+    <link href="style.css" rel="stylesheet">
+    <!-- 引入必要的库 -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r121/three.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.24/vanta.waves.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.7.1/gsap.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@1.18.11/tsparticles.min.js"></script>
+</head>
+<body>
+    <!-- 动态背景 -->
+    <div id="vanta-bg"></div>
+    <!-- 加载屏幕 -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+    </div>
+    <!-- 页面主要内容 -->
+    <div class="card">
+        <h2>Set Access Control Permissions</h2>
+        <p>Select access levels for each area:</p>
+
+        <table>
+            <thead>
+                <tr>
+                    <th>Zone</th>
+                    <th>High Access</th>
+                    <th>Medium Access</th>
+                    <th>Low Access</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Data Server</td>
+                    <td><input type="checkbox" id="dataServerHigh"></td>
+                    <td><input type="checkbox" id="dataServerMedium"></td>
+                    <td><input type="checkbox" id="dataServerLow"></td>
+                </tr>
+                <tr>
+                    <td>Office Zone</td>
+                    <td><input type="checkbox" id="officeZoneHigh"></td>
+                    <td><input type="checkbox" id="officeZoneMedium"></td>
+                    <td><input type="checkbox" id="officeZoneLow"></td>
+                </tr>
+            </tbody>
+        </table>
+
+        <button class="btn btn-save">Save Settings</button>
+    </div>
+
+    <!-- 引入脚本 -->
+    <script src="settings.js"></script>
+    <script>
+        // 初始化 Vanta 背景动画
+        VANTA.WAVES({
+            el: "#vanta-bg",
+            color: 0x2575fc,
+            shininess: 50,
+            waveHeight: 20,
+            waveSpeed: 1,
+            zoom: 0.8
+        });
+
+        // 页面加载完毕后隐藏加载屏幕
+        window.addEventListener('load', () => {
+            const loadingScreen = document.getElementById('loading-screen');
+            loadingScreen.style.opacity = '0';
+            setTimeout(() => {
+                loadingScreen.style.display = 'none';
+            }, 500);
+        });
+    </script>
+</body>
+</html>
