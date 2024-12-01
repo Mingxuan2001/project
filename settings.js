@@ -48,23 +48,6 @@ function showLoader(button) {
     }, 2000);
 }
 
-// 鼠标拖尾效果
-const mouseTail = document.createElement("div");
-mouseTail.classList.add("mouse-tail");
-document.body.appendChild(mouseTail);
-
-document.addEventListener("mousemove", (e) => {
-    mouseTail.style.top = `${e.clientY}px`;
-    mouseTail.style.left = `${e.clientX}px`;
-});
-
-document.addEventListener("mouseout", () => {
-    mouseTail.style.opacity = "0";
-});
-
-document.addEventListener("mouseover", () => {
-    mouseTail.style.opacity = "1";
-});
 
 // 粒子爆炸效果
 function particleExplosion(x, y) {
